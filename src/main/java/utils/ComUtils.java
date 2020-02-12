@@ -153,6 +153,26 @@ public class ComUtils {
         dataOutputStream.writeBytes(str);
     }
 
+    public void writeChar(char c) throws IOException {
+        byte bc[] = new byte[1];
+        bc[0] = (byte) c;
+
+        dataOutputStream.write(bc, 0 , 1);
+    }
+
+    public char readChar() throws IOException {
+        char result;
+        byte bc[] = new byte[1];
+        char cc = ' ';
+
+        bc = read_bytes(1);
+        cc= (char) bc[0];
+
+        result = cc;
+
+        return result;
+    }
+
     public enum Endianness {
         BIG_ENNDIAN,
         LITTLE_ENDIAN

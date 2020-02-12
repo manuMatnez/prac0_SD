@@ -13,11 +13,23 @@ public class ComUtilsService {
 
     public void writeTest() {
         //TODO: put your code here
+        try {
+            //comUtils.write_string_variable(2,"Hola!");
+            comUtils.writeChar('b');
+        } catch (IOException e) {
+            System.out.println("Exception");
+        }
     }
 
     public String readTest() {
         String result = "";
         //TODO: put your code here
+        try {
+            //result = comUtils.read_string_variable(2);
+            result = String.valueOf(comUtils.readChar());
+        } catch (IOException e) {
+            System.out.println("Exception");
+        }
         return result;
     }
 
